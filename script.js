@@ -7,7 +7,6 @@ let int = setInterval(blurring, 30);
 
 function blurring() {
   load++;
-
   if (load > 99) {
     clearInterval(int);
   }
@@ -17,6 +16,7 @@ function blurring() {
   bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
 }
 
+//function to map the range  for the load, to any other given range
 function scale(number, inMin, inMax, outMin, outMax) {
   return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 }
